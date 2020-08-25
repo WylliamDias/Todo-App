@@ -1,0 +1,117 @@
+main#home-main {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #C0B7B1;
+}
+
+.todo-container {
+  display: flex;
+  flex: 1;
+  max-width: 1000px;
+  padding: 25px 0;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fde3f9;
+  border-radius: 35px;
+  margin: 0 10px;
+}
+
+.todo-container form.todo-input {
+  width: min(100%, 400px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.todo-container form.todo-input::after {
+  width: 0px;
+  height: 4px;
+  background-color: skyblue;
+  content: '';
+  align-self: flex-start;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  transition: 0.4s;
+}
+
+.todo-container form.todo-input:focus-within::after {
+  width: 100%;
+  transition: 0.4s;
+}
+
+.todo-container form.todo-input > * {
+  cursor: pointer;
+}
+
+.todo-container form.todo-input label {
+  color: #327679cc;
+  font-size: 14pt;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.todo-container form.todo-input input {
+  width: 100%;
+  flex: 1; 
+  font-size: 14pt;
+  padding: 10px;
+  border-radius: 15px;
+  background: #73636366;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  outline: none;
+  box-shadow: 0px 5px 5px -2px black;
+  transition: 1s;
+}
+
+.todo-container form.todo-input input::placeholder {
+  color: white;
+  opacity: 1.0;
+}
+
+.todo-container form.todo-input input:hover,
+.todo-container form.todo-input input:focus
+{
+  background-color: #736363cf;
+  transition: 1s;
+}
+
+.todo-container ul.todo-list {
+  list-style: none;
+  width: min(100%, 800px);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+.todo-container ul.todo-list li {
+  width: min(100%, 600px);
+  display: flex;
+}
+
+.todo-container ul.todo-list li > * {
+  flex: 1;
+}
+
+
+
+
+
+
+
+
+

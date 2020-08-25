@@ -1,0 +1,221 @@
+.task-container {
+  width: min(600px, 100%);
+  padding: 5px 15px;
+  background-color: whitesmoke;
+  border: 2px skyblue solid;
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 1px 3px #6f6f6f59;
+  margin: 15px;
+  text-decoration: none;
+  transition: opacity 0.4s;
+}
+
+.task-container.complete {
+  text-decoration: line-through 3px grey;
+  opacity: 0.4;
+}
+
+.task-container .task-title-container {
+  display: flex;
+  flex: 1;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.task-container .task-title-container h1.task-title {
+  position: relative;
+  font-size: 19pt;
+  margin: 0px 15px 0px 15px;
+  color: #604f4f;
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.task-container .task-title-container h1.task-title input.task-title-edit {
+  display: none;
+  position: absolute;
+  width: 100%;
+  font-size: 19pt;
+  color: #604f4f;
+  font-weight: bold;
+  box-shadow: 0px 7px 5px -5px black;
+  border: none;
+  background-color: #f5f5f5;
+}
+
+.task-container .task-title-container .task-check {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  margin: 10px;
+}
+
+.task-container .task-title-container .task-check input {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.task-container .task-title-container .task-check div {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 0px;
+  left: 0px;
+  pointer-events: none;
+  background-color: #d0cfcf70;
+  border: 2px solid black;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.task-title-container .task-check input:checked + div {
+  background-color: skyblue;
+}
+
+.task-container .task-title-container .task-check div svg path {
+  color: transparent;
+}
+
+.task-title-container .task-check input:checked + div svg path {
+  stroke-width: 150px;
+  color: white;
+  transition: 0.2s;
+}
+
+.task-container .task-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.task-container .task-actions .action {
+  flex: 1;
+  position: relative;
+}
+
+.task-container .task-actions .action:first-child {
+  margin-bottom: 10px;
+}
+
+.task-container .task-actions .action button {
+  stroke-width: 150px;
+  border: none;
+  font-size: 20pt;
+  cursor: pointer;
+  color: white;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.task-container .task-actions .action#edit-icon button {
+  background-color: #696bf9;
+}
+
+.task-container .task-actions .action#edit-icon button::before {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  background-color: #696bf9;
+  content: '';
+  top: 10px;
+  left: 100%;
+  z-index: 1;
+  transform: rotate(45deg);
+  visibility: hidden;
+}
+
+.task-container .task-actions .action#edit-icon button:hover::before {
+  visibility: visible;
+}
+
+.task-container .task-actions .action#edit-icon button::after {
+  display: none;
+  color: white;
+  background-color: #696bf9;
+  content: 'Edit';
+  font-size: 14pt;
+  font-weight: bold;
+  height: 10px;
+  width: auto;
+  padding: 10px;
+  position: absolute;
+  top: 0px;
+  left: 112%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  z-index: 2;
+  visibility: hidden;
+}
+
+.task-container .task-actions .action#edit-icon button:hover::after {
+  visibility: visible;
+}
+
+.task-container .task-actions .action#delete-icon button {
+  background-color: #ff0000e0;
+}
+
+.task-container .task-actions .action#delete-icon button::before {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  background-color: #ff0000;
+  content: '';
+  top: 10px;
+  left: 100%;
+  z-index: 1;
+  transform: rotate(45deg);
+  visibility: hidden;
+}
+
+.task-container .task-actions .action#delete-icon button:hover::before {
+  visibility: visible;
+}
+
+.task-container .task-actions .action#delete-icon button::after {
+  display: none;
+  color: white;
+  background-color: #ff0000;
+  content: 'Delete';
+  font-size: 14pt;
+  font-weight: bold;
+  height: 10px;
+  width: auto;
+  padding: 10px;
+  position: absolute;
+  top: 0px;
+  left: 112%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  z-index: 2;
+  visibility: hidden;
+}
+
+.task-container .task-actions .action#delete-icon button:hover::after {
+  visibility: visible;
+}
+
+@media (max-width: 450px) {
+
+  .task-container .task-title-container h1.task-title {
+    font-size: 12pt;
+  }
+
+}
+
+
